@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/../Lib/Function.h
+
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/../Lib/Sinus.h
+Function.h
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/../Lib/Function.h
+
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/../Lib/Square.h
+Function.h
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/../Lib/Function.h
+
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/calculate.cpp
+iostream
+-
+Sinus.h
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/Sinus.h
+Square.h
+/home/g77/workspace/AngewandteKryptografie/src/Basics/Apps/Square.h
+

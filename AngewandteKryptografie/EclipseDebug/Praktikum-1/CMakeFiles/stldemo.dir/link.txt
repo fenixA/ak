@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/stldemo.dir/stldemo.cpp.o  -o ../bin/stldemo -rdynamic 

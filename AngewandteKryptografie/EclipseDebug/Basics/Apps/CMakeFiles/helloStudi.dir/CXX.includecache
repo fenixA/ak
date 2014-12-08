@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Basics/Apps/Greetings.cpp
+iostream
+-
+Greetings.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Basics/Apps/helloStudi.cpp
+Greetings.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+

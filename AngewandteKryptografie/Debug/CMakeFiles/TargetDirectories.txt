@@ -1,0 +1,4 @@
+/home/g77/workspace/AngewandteKryptografie/Debug/Basics/Apps/CMakeFiles/calculate.dir
+/home/g77/workspace/AngewandteKryptografie/Debug/Basics/Lib/CMakeFiles/functions.dir
+/home/g77/workspace/AngewandteKryptografie/Debug/Basics/Apps/CMakeFiles/helloStudi.dir
+/home/g77/workspace/AngewandteKryptografie/Debug/Basics/Apps/CMakeFiles/helloWorld.dir

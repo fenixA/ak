@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.cpp
+algorithm
+-
+AffineBreaker.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
+stdio.h
+-
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
+map
+-
+AffineCipher.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
+byte.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/byte.h
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
+ClassicCipher.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+iostream
+-
+string
+-
+vector
+-
+byte.h
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/byte.h
+
+/home/fenix/Dropbox/uni/Kryptographische Algorithmen/ak2/AngewandteKryptografie/src/Praktikum-1/byte.h
+

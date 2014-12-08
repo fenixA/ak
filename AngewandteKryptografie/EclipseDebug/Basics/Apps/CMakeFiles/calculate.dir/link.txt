@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/calculate.dir/calculate.cpp.o  -o ../../bin/calculate -rdynamic ../Lib/libfunctions.a 
