@@ -54,8 +54,8 @@ void AffineBreaker::breakCipher(byte ce, byte ct,
 	a = a % 26;
 
 	cout << endl << "Cipher: " << (char) (ce + 'a') << " | "
-			<< (char) (ct + 'a') << endl << (char) (a + 'a') << "(" << a << ")"
-			<< "|" << (char) (b + 'a') << "(" << b << ")" << endl;
+			<< (char) (ct + 'a') << endl << (char) (a + 'a') << "(" << a << ")" << "|"
+			<< (char) (b + 'a') << "(" << b << ")" << endl;
 	int e = a;
 	int c;
 	int d = 26;

@@ -1,0 +1,17 @@
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# + CMakeLists.txt
+# + Folder: src/Praktikum-5
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+FIND_PACKAGE(CryptoPP REQUIRED)
+FIND_PACKAGE(Threads REQUIRED)
+
+INCLUDE_DIRECTORIES(${CRYPTOPP_INCLUDE_DIR})
+
+ADD_EXECUTABLE(cryptopp-intro cryptopp-intro PRNG BlumBlumShubGenerator)
+TARGET_LINK_LIBRARIES(cryptopp-intro ${CRYPTOPP_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
+SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
+${PROJECT_SOURCE_DIR}/CMakeModules)
+ADD_SUBDIRECTORY( Praktikum-5 )
+
+

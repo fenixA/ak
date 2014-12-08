@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/functions.dir/Sinus.cpp.o"
   "CMakeFiles/functions.dir/Square.cpp.o"
   "libfunctions.pdb"
@@ -6,6 +6,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/functions.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/functions.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

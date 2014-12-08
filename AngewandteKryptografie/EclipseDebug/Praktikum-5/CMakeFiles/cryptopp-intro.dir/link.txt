@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/cryptopp-intro.dir/cryptopp-intro.cpp.o CMakeFiles/cryptopp-intro.dir/PRNG.cpp.o CMakeFiles/cryptopp-intro.dir/BlumBlumShubGenerator.cpp.o  -o ../bin/cryptopp-intro -rdynamic -lcryptopp -lpthread 
+/usr/bin/c++   -g    CMakeFiles/cryptopp-intro.dir/cryptopp-intro.cpp.o CMakeFiles/cryptopp-intro.dir/PRNG.cpp.o CMakeFiles/cryptopp-intro.dir/BlumBlumShubGenerator.cpp.o  -o ../bin/cryptopp-intro -rdynamic -lcryptopp -lpthread 

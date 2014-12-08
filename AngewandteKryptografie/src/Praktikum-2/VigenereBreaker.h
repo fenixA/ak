@@ -12,6 +12,7 @@
  */
 class VigenereBreaker: public VigenereCipher {
 protected:
+
 	/**
 	 * Compute greatest common divisor of two integers a and b
 	 *
@@ -34,8 +35,6 @@ protected:
 	int gcd(const vector<int>& v) const;
 
 public:
-
-	virtual ~VigenereBreaker(){}
 
 	/**
 	 * Perform Kasiski test to detect key length

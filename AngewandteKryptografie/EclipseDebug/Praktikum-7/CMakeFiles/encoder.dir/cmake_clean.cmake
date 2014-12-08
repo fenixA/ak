@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/encoder.dir/encoder.cpp.o"
   "CMakeFiles/encoder.dir/MessageEncoder.cpp.o"
   "../bin/encoder.pdb"
@@ -6,6 +6,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/encoder.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/encoder.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

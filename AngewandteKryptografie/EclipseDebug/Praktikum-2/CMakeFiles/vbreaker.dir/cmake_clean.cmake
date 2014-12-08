@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/vbreaker.dir/vbreaker.cpp.o"
   "CMakeFiles/vbreaker.dir/VigenereBreaker.cpp.o"
   "CMakeFiles/vbreaker.dir/VigenereCipher.cpp.o"
@@ -8,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/vbreaker.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/vbreaker.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

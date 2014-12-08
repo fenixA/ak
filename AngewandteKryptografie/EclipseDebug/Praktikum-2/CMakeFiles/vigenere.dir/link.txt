@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/vigenere.dir/vigenere.cpp.o CMakeFiles/vigenere.dir/VigenereCipher.cpp.o CMakeFiles/vigenere.dir/__/Praktikum-1/ClassicCipher.cpp.o  -o ../bin/vigenere -rdynamic 
+/usr/bin/c++   -g    CMakeFiles/vigenere.dir/vigenere.cpp.o CMakeFiles/vigenere.dir/VigenereCipher.cpp.o CMakeFiles/vigenere.dir/__/Praktikum-1/ClassicCipher.cpp.o  -o ../bin/vigenere -rdynamic 

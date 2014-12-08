@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/des.dir/des.cpp.o CMakeFiles/des.dir/DESCipher.cpp.o CMakeFiles/des.dir/BlockCipher.cpp.o  -o ../bin/des -rdynamic 
+/usr/bin/c++   -g    CMakeFiles/des.dir/des.cpp.o CMakeFiles/des.dir/DESCipher.cpp.o CMakeFiles/des.dir/BlockCipher.cpp.o  -o ../bin/des -rdynamic 

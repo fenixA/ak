@@ -13,6 +13,22 @@ DESCipher::~DESCipher() {
 // #computeKeySchedule() 
 void DESCipher::computeKeySchedule(const byte *key, bool encmode) {
 	byte pc2_ls[48]; // permuted choice 2 with integrated left shifts
+	byte c[28], d[28];
+	byte out_array[56];
+	//true = encrypt
+	//false = decrypt
+	if(encmode == true){
+
+		permutate(pc1, 56 , key, 64, out_array, 56 );
+		//copy(out_array, out_array + 28, c[28]);
+		//copy(out_array + 29, out_array + 56, d[28]);
+
+	}else{
+
+
+	}
+
+	//key_schedule =
 
 } // computeKeySchedule()
 
@@ -68,7 +84,12 @@ bool DESCipher::getBit(const byte* array, int array_len, int pos) const {
 void DESCipher::permutate(const byte* p, int p_len, const byte* in_array,
 		int in_len, byte* out_array, int out_len) const {
 
-	for(int i = 0; i < out_len;i++){
+
+	for(int j = 0; j < out_len; j++){
+		out_array[j] = 0x00;
+	}
+
+	for(int i = 0; i < p_len;i++){
 
 		setBit(out_array, out_len, i , getBit(in_array,in_len, in_array[p[i]-1] ));
 	}
@@ -79,12 +100,14 @@ void DESCipher::printBitField(const byte* bytefield, int len,
 		int block_len) const {
 	int i = 0;
 	while (i < len) {
-		if (i % block_len == 0) {
+		if ((i % block_len) == 0) {
 			cout << " " << endl;
-		}
-		cout << bytefield[i];
 
+		}
+		cout << getBit(bytefield, len, i);
+		i++;
 	}
+	cout << endl;
 } // printBitField()
 
 // #processBlock()

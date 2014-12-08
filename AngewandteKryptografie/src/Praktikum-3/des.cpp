@@ -17,6 +17,20 @@ int main(int argc, char **argv) {
   int i,j;
   bool encmode;
 
+
+  cout << (byte) 00101111 << endl;
+
+  	 byte array [] = { (byte) 01011110, (byte) 1101011};
+	// byte bytefield2 [] = { 11110011, 11000000};
+
+
+
+	 des.printBitField(array, 2, 8);
+	// des.printBitField(bytefield2, 16, 100);
+
+	  return 0;
+
+
   /*
    * Check whether at least three arguments are given.
    */

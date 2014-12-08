@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/kasiski.dir/kasiski.cpp.o CMakeFiles/kasiski.dir/VigenereBreaker.cpp.o CMakeFiles/kasiski.dir/VigenereCipher.cpp.o CMakeFiles/kasiski.dir/__/Praktikum-1/ClassicCipher.cpp.o  -o ../bin/kasiski -rdynamic 
+/usr/bin/c++   -g    CMakeFiles/kasiski.dir/kasiski.cpp.o CMakeFiles/kasiski.dir/VigenereBreaker.cpp.o CMakeFiles/kasiski.dir/VigenereCipher.cpp.o CMakeFiles/kasiski.dir/__/Praktikum-1/ClassicCipher.cpp.o  -o ../bin/kasiski -rdynamic 

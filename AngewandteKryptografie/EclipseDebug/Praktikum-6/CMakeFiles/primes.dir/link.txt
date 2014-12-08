@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/primes.dir/primes.cpp.o CMakeFiles/primes.dir/FortunaGenerator.cpp.o CMakeFiles/primes.dir/MillerRabinTest.cpp.o CMakeFiles/primes.dir/__/Praktikum-5/PRNG.cpp.o  -o ../bin/primes -rdynamic -lcryptopp 
+/usr/bin/c++   -g    CMakeFiles/primes.dir/primes.cpp.o CMakeFiles/primes.dir/FortunaGenerator.cpp.o CMakeFiles/primes.dir/MillerRabinTest.cpp.o CMakeFiles/primes.dir/__/Praktikum-5/PRNG.cpp.o  -o ../bin/primes -rdynamic -lcryptopp 
