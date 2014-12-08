@@ -5,6 +5,8 @@
 *.class
 *.txt
 
+
+
 # eclipse specific git ignore
 *.pydevproject
 .project
@@ -12,6 +14,8 @@
 bin/**
 tmp/**
 tmp/**/*
+EclipseDebug/**
+EclipseDebug/**/*
 *.tmp
 *.bak
 *.swp
