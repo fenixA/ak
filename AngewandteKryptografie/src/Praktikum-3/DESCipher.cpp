@@ -14,22 +14,51 @@ DESCipher::~DESCipher() {
 // #computeKeySchedule() 
 void DESCipher::computeKeySchedule(const byte *key, bool encmode) {
 	byte pc2_ls[48]; // permuted choice 2 with integrated left shifts
-	byte c[28], d[28];
-	byte out_array[56];
-	//true = encrypt
-	//false = decrypt
-	if(encmode == true){
+	byte permutationArrayTable[16][48];
+	byte shiftTable[] = { 1, 2, 4, 6, 8, 10, 12, 14, 15, 17, 19, 21, 23, 25, 27,
+			28 };
 
-		permutate(pc1, 56 , key, 64, out_array, 56 );
-		copy(out_array, out_array + 28, c[28]);
-		//copy(out_array + 29, out_array + 56, d[28]);
-
-	}else{
-
-
+	byte temp[48];
+	for (int i = 0; i < 16; i++) {
+		//calc pc2_ls
+		for (int j = 0; j < 48; j++) {
+			if (pc2[j] < 28) {
+				int temp = (pc2[j] - shiftTable[i]) % 28;
+				pc2_ls[j] = temp;
+			} else {
+				int temp = ((pc2[j] - shiftTable[i]) % 28) + 28;
+				pc2_ls[j] = temp;
+			}
+		}
+		for (int j = 0; j < 48; j++) {
+			if (pc1[j] < 48) {
+				temp[j] = pc2_ls[pc1[j]];
+			}
+		}
+		printByteArray(temp, 6);
 	}
 
-	//key_schedule =
+	/*	byte reducedKey[56];
+	 permutate(pc1, 56, key, 8, reducedKey, 7);
+	 for (int i = 0; i < 16; i++) {
+	 byte subRoundKey[7] = { 0 };
+	 for (int j = 0; j < 28; j++) {
+	 setBit(subRoundKey, 7, j,
+	 getBit(reducedKey, 7, (j + shiftTable[i]) % 28));
+	 setBit(subRoundKey, 7, j + 28,
+	 getBit(reducedKey, 7, (j + shiftTable[i]) % 28 + 28));
+	 }
+	 byte roundKey[6] = { 0 };
+	 permutate(pc2, 6, subRoundKey, 7, roundKey, 6);
+	 if (encmode) {
+	 copy(roundKey, roundKey + 48, key_schedule[i]);
+	 } else {
+	 copy(roundKey, roundKey + 48, key_schedule[15 - i]);
+	 }
+	 cout << endl << "Round:\t" << i;
+	 printBitField(roundKey, 48, 8);
+	 cout << endl;
+	 }*/
 
 } // computeKeySchedule()
 
@@ -85,14 +114,14 @@ bool DESCipher::getBit(const byte* array, int array_len, int pos) const {
 void DESCipher::permutate(const byte* p, int p_len, const byte* in_array,
 		int in_len, byte* out_array, int out_len) const {
 
-
-	for(int j = 0; j < out_len; j++){
+	for (int j = 0; j < out_len; j++) {
 		out_array[j] = 0x00;
 	}
 
-	for(int i = 0; i < p_len;i++){
+	for (int i = 0; i < p_len; i++) {
 
-		setBit(out_array, out_len, i , getBit(in_array,in_len, in_array[p[i]-1] ));
+		cout << endl << "i:\t" << i << "\tp[i]:\t" << (int) p[i];
+		setBit(out_array, out_len, i, getBit(in_array, in_len, p[i] - 1));
 	}
 } // permutate()
 
@@ -103,7 +132,6 @@ void DESCipher::printBitField(const byte* bytefield, int len,
 	while (i < len) {
 		if ((i % block_len) == 0) {
 			cout << " " << endl;
-
 		}
 		cout << getBit(bytefield, len, i);
 		i++;
@@ -139,6 +167,15 @@ void DESCipher::setBit(byte* array, int array_len, int pos, bool value) const {
 
 } // setBit()
 
+void printByteArray(byte* input, int len) {
+	for (int i = 0; i < len; i++) {
+		cout << (int) input[i] << " ";
+		if (i % 8 == 0) {
+			cout << endl;
+		}
+	}
+}
+
 // #ip
 byte DESCipher::ip[64] = { 58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28,
 		20, 12, 4, 62, 54, 46, 38, 30, 22, 14, 6, 64, 56, 48, 40, 32, 24, 16, 8,
@@ -157,14 +194,14 @@ byte DESCipher::ev[48] = { 32, 1, 2, 3, 4, 5, 4, 5, 6, 7, 8, 9, 8, 9, 10, 11,
 		24, 25, 24, 25, 26, 27, 28, 29, 28, 29, 30, 31, 32, 1 };
 
 // #pc1
-byte DESCipher::pc1[] = { 57, 49, 41, 33, 25, 17, 9, 1, 58, 50, 42, 34, 26, 18,
-		10, 2, 59, 51, 43, 35, 27, 19, 11, 3, 60, 52, 44, 36,
+byte DESCipher::pc1[56] = { 57, 49, 41, 33, 25, 17, 9, 1, 58, 50, 42, 34, 26,
+		18, 10, 2, 59, 51, 43, 35, 27, 19, 11, 3, 60, 52, 44, 36,
 
 		63, 55, 47, 39, 31, 23, 15, 7, 62, 54, 46, 38, 30, 22, 14, 6, 61, 53,
 		45, 37, 29, 21, 13, 5, 28, 20, 12, 4 };
 
 // #pc2
-byte DESCipher::pc2[] = { 14, 17, 11, 24, 1, 5, 3, 28, 15, 6, 21, 10, 23, 19,
+byte DESCipher::pc2[48] = { 14, 17, 11, 24, 1, 5, 3, 28, 15, 6, 21, 10, 23, 19,
 		12, 4, 26, 8, 16, 7, 27, 20, 13, 2, 41, 52, 31, 37, 47, 55, 30, 40, 51,
 		45, 33, 48, 44, 49, 39, 56, 34, 53, 46, 42, 50, 36, 29, 32 };
 

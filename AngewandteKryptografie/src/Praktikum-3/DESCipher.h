@@ -177,6 +177,8 @@ public:
    */
   void setBit(byte* array, int array_len, int pos, bool value) const;
 
+  void printByteArray(byte* input, int len);
+
 }; // class DESCipher
 
 #endif

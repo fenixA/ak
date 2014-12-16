@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/dhprotocol.dir/dhprotocol.cpp.o"
   "CMakeFiles/dhprotocol.dir/MessageEncoder.cpp.o"
   "CMakeFiles/dhprotocol.dir/DHProtocol.cpp.o"
@@ -9,6 +9,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/dhprotocol.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/dhprotocol.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

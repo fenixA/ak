@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/cryptopp-intro.dir/cryptopp-intro.cpp.o"
   "CMakeFiles/cryptopp-intro.dir/PRNG.cpp.o"
   "CMakeFiles/cryptopp-intro.dir/BlumBlumShubGenerator.cpp.o"
@@ -7,6 +7,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/cryptopp-intro.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/cryptopp-intro.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
