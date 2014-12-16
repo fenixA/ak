@@ -1,6 +1,7 @@
 #include <cassert>
 #include <iomanip>
 #include "DESCipher.h"
+#include <algorithm>
 
 // #DESCipher()
 DESCipher::DESCipher() {
@@ -20,7 +21,7 @@ void DESCipher::computeKeySchedule(const byte *key, bool encmode) {
 	if(encmode == true){
 
 		permutate(pc1, 56 , key, 64, out_array, 56 );
-		//copy(out_array, out_array + 28, c[28]);
+		copy(out_array, out_array + 28, c[28]);
 		//copy(out_array + 29, out_array + 56, d[28]);
 
 	}else{
