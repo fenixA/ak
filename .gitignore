@@ -25,6 +25,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.cmake
 
 # External tool builders
 .externalToolBuilders/
