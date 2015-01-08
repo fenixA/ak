@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/../Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/../Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.cpp
 BlockCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
 cassert
 -
 iomanip
@@ -18,29 +18,29 @@ iomanip
 vector
 -
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
 iostream
 -
 string
 -
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.cpp
 cassert
 -
 iomanip
 -
 DESCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
 algorithm
 -
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
 BlockCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/BlockCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/des.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/des.cpp
 iomanip
 -
 iostream
@@ -50,5 +50,5 @@ fstream
 cstring
 -
 DESCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-3/DESCipher.h
 

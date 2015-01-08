@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.cpp
 cmath
 -
 Sinus.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Sinus.h
 Function.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Square.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Square.cpp
 Square.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Square.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Square.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Square.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Square.h
 Function.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Lib/Function.h
 

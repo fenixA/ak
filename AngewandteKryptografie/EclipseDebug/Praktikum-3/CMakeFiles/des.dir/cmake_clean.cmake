@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/des.dir/des.cpp.o"
   "CMakeFiles/des.dir/DESCipher.cpp.o"
   "CMakeFiles/des.dir/BlockCipher.cpp.o"
@@ -7,6 +7,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/des.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/des.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

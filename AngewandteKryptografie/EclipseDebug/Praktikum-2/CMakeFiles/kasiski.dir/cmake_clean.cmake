@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/kasiski.dir/kasiski.cpp.o"
   "CMakeFiles/kasiski.dir/VigenereBreaker.cpp.o"
   "CMakeFiles/kasiski.dir/VigenereCipher.cpp.o"
@@ -8,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/kasiski.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/kasiski.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

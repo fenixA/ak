@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
 map
 -
 AffineCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/AffineCipher.h
 ClassicCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
 iostream
 -
 string
@@ -26,11 +26,11 @@ string
 vector
 -
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/stldemo.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/stldemo.cpp
 iostream
 -
 vector
@@ -40,7 +40,7 @@ map
 set
 -
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 AffineBreaker.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/AffineBreaker.h
 

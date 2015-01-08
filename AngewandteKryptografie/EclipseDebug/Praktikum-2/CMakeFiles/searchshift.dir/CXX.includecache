@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.cpp
 ClassicCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/ClassicCipher.h
 iostream
 -
 string
@@ -18,23 +18,23 @@ string
 vector
 -
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineBreaker.h
 map
 -
 AffineCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineCipher.h
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/AffineCipher.h
 ClassicCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/ClassicCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/ClassicCipher.h
 iostream
 -
 string
@@ -42,11 +42,11 @@ string
 vector
 -
 byte.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/../Praktikum-1/byte.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.cpp
 cassert
 -
 map
@@ -62,31 +62,31 @@ vector
 math.h
 -
 VigenereBreaker.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
 AffineBreaker.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/AffineBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/AffineBreaker.h
 algorithm
 -
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
 vector
 -
 map
 -
 VigenereCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.cpp
 cassert
 -
 VigenereCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereCipher.h
 ClassicCipher.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/ClassicCipher.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/ClassicCipher.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/searchshift.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/searchshift.cpp
 algorithm
 -
 cassert
@@ -102,5 +102,5 @@ iomanip
 iostream
 -
 VigenereBreaker.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Praktikum-2/VigenereBreaker.h
 

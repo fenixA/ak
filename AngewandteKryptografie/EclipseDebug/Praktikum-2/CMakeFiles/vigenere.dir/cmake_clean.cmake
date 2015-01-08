@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/vigenere.dir/vigenere.cpp.o"
   "CMakeFiles/vigenere.dir/VigenereCipher.cpp.o"
   "CMakeFiles/vigenere.dir/__/Praktikum-1/ClassicCipher.cpp.o"
@@ -7,6 +7,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/vigenere.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/vigenere.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

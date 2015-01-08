@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/primes.dir/primes.cpp.o"
   "CMakeFiles/primes.dir/FortunaGenerator.cpp.o"
   "CMakeFiles/primes.dir/MillerRabinTest.cpp.o"
@@ -8,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/primes.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/primes.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

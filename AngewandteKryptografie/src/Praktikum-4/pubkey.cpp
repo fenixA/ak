@@ -9,6 +9,11 @@ void integerExercise() {
 	/*********************************************************************
 	 * Aufgabe 2.
 	 *********************************************************************/
+	Integer a = Integer(23975);
+	Integer b = Integer("12345678900987654321");
+	Integer c = Integer::Power2(10);
+
+	cout << "Aufgabe 2: " << (a + c) * b % 50001 <<endl;
 }
 
 void eeaExercise() {
@@ -41,7 +46,7 @@ void millerRabinExercise() {
 	 *********************************************************************/
 }
 
-}
+
 
 int main(int argc, char** argv) {
 

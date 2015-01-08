@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Secret.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Secret.cpp
 iostream
 -
 iomanip
@@ -14,13 +14,13 @@ iomanip
 string
 -
 Secret.hpp
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
 vector
 -
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/message.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/message.cpp
 Secret.hpp
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Secret.hpp
 

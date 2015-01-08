@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.cpp
 iostream
 -
 Greetings.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
 
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/helloStudi.cpp
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/helloStudi.cpp
 Greetings.h
-/home/fenix/Dropbox/uni/Kryptographische Algorithmen/akGit/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
+/home/g77/workspace/ak/AngewandteKryptografie/src/Basics/Apps/Greetings.h
 
