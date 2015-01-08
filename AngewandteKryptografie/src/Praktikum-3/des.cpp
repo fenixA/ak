@@ -16,20 +16,21 @@ int main(int argc, char **argv) {
 	byte key[8];
 	int i, j;
 	bool encmode;
+
 	if (strcmp(argv[1], "test") == 0) {
 
 		byte a[2] = { 0x2F, 0x6B };
 		byte b[2] = { 0xF3, 0xC0 };
 
-		byte p[13] = { 0x01, 0x03, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x06, 0x07,
-				0x03, 0x02, 0x01 };
+		byte p[13] = { 0x01, 0x03, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x06,
+				0x07, 0x03, 0x02, 0x01 };
 		byte in[] = { 0xD2 };
 		byte out[5];
 
 		encmode = true;
 		des.computeKeySchedule(a, true);
 
-
+		byte first = 0, second = 1;
 
 		//des.permutate(p, 13, in, 1, out, 5);
 		//des.printBitField(out, 40, 8);

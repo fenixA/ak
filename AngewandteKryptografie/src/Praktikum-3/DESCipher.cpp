@@ -11,81 +11,99 @@ DESCipher::DESCipher() {
 DESCipher::~DESCipher() {
 } // ~DESCipher()
 
-// #computeKeySchedule() 
+// #computeKeySchedule()
 void DESCipher::computeKeySchedule(const byte *key, bool encmode) {
 	byte pc2_ls[48]; // permuted choice 2 with integrated left shifts
-	byte permutationArrayTable[16][48];
-	byte shiftTable[] = { 1, 2, 4, 6, 8, 10, 12, 14, 15, 17, 19, 21, 23, 25, 27,
-			28 };
-
-	byte temp[48];
+	int jpc2, jls, jk;
 	for (int i = 0; i < 16; i++) {
-		//calc pc2_ls
+		cout << endl << "Runde " << i + 1 << endl;
 		for (int j = 0; j < 48; j++) {
-			if (pc2[j] < 28) {
-				int temp = (pc2[j] - shiftTable[i]) % 28;
-				pc2_ls[j] = temp;
-			} else {
-				int temp = ((pc2[j] - shiftTable[i]) % 28) + 28;
-				pc2_ls[j] = temp;
-			}
+			jpc2 = pc2[j] - 1;
+			if (jpc2 < 28)
+				jls = ((jpc2 + total_rot[i]) % 28);
+			else
+				jls = 28 + ((jpc2 - 28 + total_rot[i]) % 28);
+			jk = pc1[jls];
+			//tabellen ausgeben
+			if ((j + 1) % 12 == 0)
+				cout << jk << endl;
+			else
+				cout << jk << " ";
+			pc2_ls[j] = jk;
 		}
-		for (int j = 0; j < 48; j++) {
-			if (pc1[j] < 48) {
-				temp[j] = pc2_ls[pc1[j]];
-			}
-		}
-		printByteArray(temp, 6);
+		cout << endl;
+
+		if (encmode)
+			permutate(pc2_ls, 48, key, 8, key_schedule[i], 6);
+		else
+			permutate(pc2_ls, 48, key, 8, key_schedule[15 - i], 6);
 	}
-
-	/*	byte reducedKey[56];
-	 permutate(pc1, 56, key, 8, reducedKey, 7);
-	 for (int i = 0; i < 16; i++) {
-	 byte subRoundKey[7] = { 0 };
-	 for (int j = 0; j < 28; j++) {
-	 setBit(subRoundKey, 7, j,
-	 getBit(reducedKey, 7, (j + shiftTable[i]) % 28));
-	 setBit(subRoundKey, 7, j + 28,
-	 getBit(reducedKey, 7, (j + shiftTable[i]) % 28 + 28));
-	 }
-	 byte roundKey[6] = { 0 };
-	 permutate(pc2, 6, subRoundKey, 7, roundKey, 6);
-	 if (encmode) {
-	 copy(roundKey, roundKey + 48, key_schedule[i]);
-	 } else {
-	 copy(roundKey, roundKey + 48, key_schedule[15 - i]);
-	 }
-	 cout << endl << "Round:\t" << i;
-	 printBitField(roundKey, 48, 8);
-	 cout << endl;
-	 }*/
-
+	cout << endl;
 } // computeKeySchedule()
 
 // #computeSBox()
 byte DESCipher::computeSBox(byte id, byte line, byte col) {
-
+	return sbox[id][line * 16 + col];
 } // computeSBox()
 
 // #decrypt()
 int DESCipher::decrypt(const byte* cipher_text, int cipher_len, const byte* key,
 		int key_len, byte* plain_text, int plain_len) {
-
+	assert(cipher_len % 8 == 0);
+	computeKeySchedule(key, 0);
+	for (int i = 0; i < plain_len / 8; i++) {
+		processBlock(&cipher_text[i * 8], &plain_text[i * 8]);
+	}
+	return 0;
 } // decrypt()
 
 // #encrypt()
 int DESCipher::encrypt(const byte* plain_text, int plain_len, const byte* key,
 		int key_len, byte* cipher_text, int cipher_len) {
+	assert(plain_len % 8 == 0);
+	computeKeySchedule(key, 1);
+	for (int i = 0; i < plain_len / 8; i++) {
+		processBlock(&plain_text[i * 8], &cipher_text[i * 8]);
+	}
+	return 0;
 } // encrypt()
 
 // #feistel()
 void DESCipher::feistel(const byte* l_in, const byte* r_in, const byte* key,
 		byte* l_out, byte* r_out, int rnd) {
+	functionF(r_in, key, r_out, rnd);
+	for (int i = 0; i < 4; i++) {
+		l_out[i] = r_in[i];
+		r_out[i] = r_out[i] ^ l_in[i];
+	}
 } // feistel()
 
 // #functionF()
 void DESCipher::functionF(const byte* r_in, const byte* key, byte* r_out,
 		int rnd) {
+	byte temp1[6], temp2[6];
+	permutate(ev, 48, r_in, 4, temp1, 6);
+	for (int i = 0; i < 6; i++) {
+		temp2[i] = temp1[i] ^ key[i];
+	}
+
+	//8 SBoxes
+	int line, col;
+	byte temp;
+	for (int i = 0; i < 8; i++) {
+		line = (int) getBit(temp2, 6, i * 6) * 2
+				+ (int) getBit(temp2, 6, i * 6 + 5);
+		col = (int) getBit(temp2, 6, 1 + i * 6) * 8
+				+ (int) getBit(temp2, 6, 2 + i * 6) * 4
+				+ (int) getBit(temp2, 6, 3 + i * 6) * 2
+				+ (int) getBit(temp2, 6, 4 + i * 6);
+		temp = computeSBox(i, line, col);
+		if (i % 2 == 0)
+			temp1[i / 2] = computeSBox(i, line, col);
+		else
+			temp1[i / 2] = (temp1[i / 2] << 4) + computeSBox(i, line, col);
+	}
+	permutate(pp, 32, temp1, 4, r_out, 4);
 } // functionF()
 
 // #getBit()
@@ -117,10 +135,7 @@ void DESCipher::permutate(const byte* p, int p_len, const byte* in_array,
 	for (int j = 0; j < out_len; j++) {
 		out_array[j] = 0x00;
 	}
-
 	for (int i = 0; i < p_len; i++) {
-
-		cout << endl << "i:\t" << i << "\tp[i]:\t" << (int) p[i];
 		setBit(out_array, out_len, i, getBit(in_array, in_len, p[i] - 1));
 	}
 } // permutate()
@@ -141,6 +156,28 @@ void DESCipher::printBitField(const byte* bytefield, int len,
 
 // #processBlock()
 void DESCipher::processBlock(const byte* in_block, byte* out_block) {
+
+	byte temp[8], templ1[4], tempr1[4], templ2[4], tempr2[4];
+	permutate(ip, 64, in_block, 8, temp, 8);
+	for(int i = 0; i < 4; i++){
+		templ1[i] = temp[i];
+		tempr1[i] = temp[i+4];
+	}
+	for (int i = 0; i < 16; i++) {
+		if (i % 2 == 0) {
+			feistel(templ1, tempr1, key_schedule[i], templ2, tempr2,
+					i);
+		} else {
+			feistel(templ2, tempr2, key_schedule[i], templ1, tempr1,
+					i);
+		}
+	}
+	//reverse l and r block
+	for (int i = 0; i < 4; i++) {
+		temp[i] = tempr1[i];
+		temp[i+4] = templ1[i];
+	}
+	permutate(fp, 64, temp, 8, out_block, 8);
 } // processBlock()
 
 // #setBit()
@@ -156,7 +193,7 @@ void DESCipher::setBit(byte* array, int array_len, int pos, bool value) const {
 	bitpos = 7 - (pos % 8);
 	b = 0x01;
 	b = b << bitpos;
-	//cout << "(" << dec << bytepos << "," << bitpos << "," << hex << (short)b << ") ";
+//cout << "(" << dec << bytepos << "," << bitpos << "," << hex << (short)b << ") ";
 	if (value == true) {
 		array[bytepos] |= b;
 	} // if
@@ -167,7 +204,7 @@ void DESCipher::setBit(byte* array, int array_len, int pos, bool value) const {
 
 } // setBit()
 
-void printByteArray(byte* input, int len) {
+void DESCipher::printByteArray(byte* input, int len) {
 	for (int i = 0; i < len; i++) {
 		cout << (int) input[i] << " ";
 		if (i % 8 == 0) {

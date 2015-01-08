@@ -179,6 +179,7 @@ public:
 
   void printByteArray(byte* input, int len);
 
+
 }; // class DESCipher
 
 #endif
