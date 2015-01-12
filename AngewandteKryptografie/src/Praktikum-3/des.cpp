@@ -17,10 +17,11 @@ int main(int argc, char **argv) {
 	int i, j;
 	bool encmode;
 
-	if (strcmp(argv[1], "test") == 0) {
+	if (strcmp(argv[1], "aufgaben") == 0) {
 
-		byte a[2] = { 0x2F, 0x6B };
-		byte b[2] = { 0xF3, 0xC0 };
+		//aufgabe a
+		byte a[8] = {0};
+		byte b[8] = {0,0,0,0,0,0,0,0x01};
 
 		byte p[13] = { 0x01, 0x03, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x06,
 				0x07, 0x03, 0x02, 0x01 };

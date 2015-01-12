@@ -14,22 +14,21 @@ DESCipher::~DESCipher() {
 // #computeKeySchedule()
 void DESCipher::computeKeySchedule(const byte *key, bool encmode) {
 	byte pc2_ls[48]; // permuted choice 2 with integrated left shifts
-	int jpc2, jls, jk;
+	int tempInt1, tempInt2, tempInt3;
 	for (int i = 0; i < 16; i++) {
-		cout << endl << "Runde " << i + 1 << endl;
+		cout << endl << "Round " << i + 1 << endl;
 		for (int j = 0; j < 48; j++) {
-			jpc2 = pc2[j] - 1;
-			if (jpc2 < 28)
-				jls = ((jpc2 + total_rot[i]) % 28);
+			tempInt1 = pc2[j] - 1;
+			if (tempInt1 < 28)
+				tempInt2 = ((tempInt1 + total_rot[i]) % 28);
 			else
-				jls = 28 + ((jpc2 - 28 + total_rot[i]) % 28);
-			jk = pc1[jls];
-			//tabellen ausgeben
+				tempInt2 = 28 + ((tempInt1 - 28 + total_rot[i]) % 28);
+			tempInt3 = pc1[tempInt2];
 			if ((j + 1) % 12 == 0)
-				cout << jk << endl;
+				cout << tempInt3 << endl;
 			else
-				cout << jk << " ";
-			pc2_ls[j] = jk;
+				cout << tempInt3 << " ";
+			pc2_ls[j] = tempInt3;
 		}
 		cout << endl;
 
@@ -131,9 +130,8 @@ bool DESCipher::getBit(const byte* array, int array_len, int pos) const {
 // #permutate()
 void DESCipher::permutate(const byte* p, int p_len, const byte* in_array,
 		int in_len, byte* out_array, int out_len) const {
-
 	for (int j = 0; j < out_len; j++) {
-		out_array[j] = 0x00;
+		out_array[j] = 0;
 	}
 	for (int i = 0; i < p_len; i++) {
 		setBit(out_array, out_len, i, getBit(in_array, in_len, p[i] - 1));
