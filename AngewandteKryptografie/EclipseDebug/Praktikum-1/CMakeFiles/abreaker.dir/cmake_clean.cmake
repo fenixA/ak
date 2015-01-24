@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/abreaker.dir/abreaker.cpp.o"
   "CMakeFiles/abreaker.dir/AffineCipher.cpp.o"
   "CMakeFiles/abreaker.dir/AffineBreaker.cpp.o"
@@ -8,6 +8,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/abreaker.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/abreaker.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

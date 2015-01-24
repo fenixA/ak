@@ -1,1 +1,1 @@
-/usr/bin/c++   -g    CMakeFiles/helloStudi.dir/helloStudi.cpp.o CMakeFiles/helloStudi.dir/Greetings.cpp.o  -o ../../bin/helloStudi -rdynamic 
+/usr/bin/c++   -g   CMakeFiles/helloStudi.dir/helloStudi.cpp.o CMakeFiles/helloStudi.dir/Greetings.cpp.o  -o ../../bin/helloStudi -rdynamic 

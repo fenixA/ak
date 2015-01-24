@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/netintro.dir/netintro.cpp.o"
   "CMakeFiles/netintro.dir/MessageEncoder.cpp.o"
   "../bin/netintro.pdb"
@@ -6,6 +6,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/netintro.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/netintro.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

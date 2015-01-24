@@ -1,1 +1,1 @@
-/usr/bin/c++   -g    CMakeFiles/encoder.dir/encoder.cpp.o CMakeFiles/encoder.dir/MessageEncoder.cpp.o  -o ../bin/encoder -rdynamic -lcryptopp 
+/usr/bin/c++   -g   CMakeFiles/encoder.dir/encoder.cpp.o CMakeFiles/encoder.dir/MessageEncoder.cpp.o  -o ../bin/encoder -rdynamic -lcryptopp 
