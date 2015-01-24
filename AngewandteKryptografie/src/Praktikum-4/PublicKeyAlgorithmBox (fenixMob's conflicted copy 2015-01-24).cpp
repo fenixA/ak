@@ -34,19 +34,7 @@ bool PublicKeyAlgorithmBox::EEA(const Integer& a, const Integer& b, Integer& d,
 // #modularExponentation()
 Integer PublicKeyAlgorithmBox::modularExponentation(const Integer& a,
 		const Integer& b, const Integer& n) {
-	Integer c = 0;
-	Integer d = 1;
-	int i = 0;
-	int k = b.BitCount() - 1;
-
-	while (i < b.BitCount()) {
-		d = (d * d) % n;
-		if (b.GetBit(k - i) == 1) {
-			d = (d * a) % n;
-		}
-		i++;
-	}
-	return d;
+	return Integer("1");
 } // modularExponentation()
 
 // #multInverse()
@@ -65,27 +53,6 @@ bool PublicKeyAlgorithmBox::multInverse(const Integer& a, const Integer& n,
 
 // #witness()
 bool PublicKeyAlgorithmBox::witness(const Integer& a, const Integer& n) {
-	if (n <= 2 || !((n % 2) == 1) || a < 1 || a > (n - 1)) {
-		cout << endl << "Fehlerhafte Eingabe!" << endl;
-		return false;
-	}
-	Integer u = n - 1, r = 0, d = 0, x = 0;
-	while ((u % 2) == 0) {
-		u = (u / 2);
-		r++;
-	}
-	d = modularExponentation(a, u, n);
-	for (int i = 0; i <= r; i++) {
-		x = d;
-		d = (d * d) % n;
-
-		if (d == 1 && x != 1 && x != (n - 1)) {
-			return true;
-		}
-	}
-	if (d != 1) {
-		return true;
-	}
 	return false;
 } // witness()
 
@@ -96,17 +63,6 @@ Integer PublicKeyAlgorithmBox::randomInteger(const Integer& n) {
 
 // #millerRabinTest()
 bool PublicKeyAlgorithmBox::millerRabinTest(Integer& n, unsigned int s) {
-	PRNG* rng = new NonblockingRng;
-	Integer a;
-	for (int i = 0; i < s; i++) {
-		a = 1;
-		while (a < 2) {
-			a = rng->getInteger(n - 1);
-		}
-		if (witness(a, n)) {
-			return false;
-		}
-	}
 	return true;
 } // millerRabinTest()
 
@@ -119,30 +75,13 @@ unsigned int PublicKeyAlgorithmBox::randomPrime(Integer &p, unsigned int bitlen,
 // #randomPrime()
 unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 		unsigned int bitlen, unsigned int s) {
-	PRNG* rng = new NonblockingRng;
-	while (true) {
-		p = rng->getInteger(Integer::Power2(bitlen));
-		if (p % 3 != 4) {
-			continue;
-		} else if (!millerRabinTest(p, s)) {
-			continue;
-		} else {
-			return 0;
-		}
-	}
 	return 0;
 } // randomRabinPrime()
 
 // #modPrimeSqrt()
 bool PublicKeyAlgorithmBox::modPrimeSqrt(const Integer& y, const Integer& p,
 		vector<Integer>& v) {
-	if (p % 3 != 4) {
-		return false;
-	}
-	Integer tmp = modularExponentation(y, (p + 1) / 4, p);
-	v.push_back(tmp);
-	v.push_back(p - tmp);
-	return true;
+	return false;
 }
 
 Integer PublicKeyAlgorithmBox::euklid(const Integer& a, const Integer& b,

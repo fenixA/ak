@@ -122,7 +122,7 @@ unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 	PRNG* rng = new NonblockingRng;
 	while (true) {
 		p = rng->getInteger(Integer::Power2(bitlen));
-		if (p % 3 != 4) {
+		if (!(p % 3 == 4)) {
 			continue;
 		} else if (!millerRabinTest(p, s)) {
 			continue;
@@ -136,13 +136,10 @@ unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 // #modPrimeSqrt()
 bool PublicKeyAlgorithmBox::modPrimeSqrt(const Integer& y, const Integer& p,
 		vector<Integer>& v) {
-	if (p % 3 != 4) {
+	if (!(p % 3 == 4)) {
 		return false;
 	}
-	Integer tmp = modularExponentation(y, (p + 1) / 4, p);
-	v.push_back(tmp);
-	v.push_back(p - tmp);
-	return true;
+	return false;
 }
 
 Integer PublicKeyAlgorithmBox::euklid(const Integer& a, const Integer& b,
