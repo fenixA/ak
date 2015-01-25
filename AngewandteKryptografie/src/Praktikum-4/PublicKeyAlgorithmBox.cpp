@@ -54,7 +54,7 @@ bool PublicKeyAlgorithmBox::multInverse(const Integer& a, const Integer& n,
 		Integer& a_inv) {
 	Integer d, x, y;
 	bool gcd = EEA(a, n, d, x, y);
-	if (d != 0 || !gcd) {
+	if (d != 1 || !gcd) {
 		return false;
 	} else {
 		x = x < 0 ? (x + n) % n : x;
@@ -65,10 +65,6 @@ bool PublicKeyAlgorithmBox::multInverse(const Integer& a, const Integer& n,
 
 // #witness()
 bool PublicKeyAlgorithmBox::witness(const Integer& a, const Integer& n) {
-	if (n <= 2 || !((n % 2) == 1) || a < 1 || a > (n - 1)) {
-		cout << endl << "Fehlerhafte Eingabe!" << endl;
-		return false;
-	}
 	Integer u = n - 1, r = 0, d = 0, x = 0;
 	while ((u % 2) == 0) {
 		u = (u / 2);
@@ -96,12 +92,12 @@ Integer PublicKeyAlgorithmBox::randomInteger(const Integer& n) {
 
 // #millerRabinTest()
 bool PublicKeyAlgorithmBox::millerRabinTest(Integer& n, unsigned int s) {
-	PRNG* rng = new NonblockingRng;
+	NonblockingRng rng = NonblockingRng();
 	Integer a;
 	for (int i = 0; i < s; i++) {
 		a = 1;
 		while (a < 2) {
-			a = rng->getInteger(n - 1);
+			a.Randomize(rng, (n-1).BitCount());
 		}
 		if (witness(a, n)) {
 			return false;
@@ -119,10 +115,11 @@ unsigned int PublicKeyAlgorithmBox::randomPrime(Integer &p, unsigned int bitlen,
 // #randomPrime()
 unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 		unsigned int bitlen, unsigned int s) {
-	PRNG* rng = new NonblockingRng;
+	NonblockingRng rng = NonblockingRng();
 	while (true) {
-		p = rng->getInteger(Integer::Power2(bitlen));
-		if (p % 3 != 4) {
+		//bitlen?
+		p.Randomize(rng, bitlen);
+		if (p % 4 != 3) {
 			continue;
 		} else if (!millerRabinTest(p, s)) {
 			continue;
@@ -136,7 +133,7 @@ unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 // #modPrimeSqrt()
 bool PublicKeyAlgorithmBox::modPrimeSqrt(const Integer& y, const Integer& p,
 		vector<Integer>& v) {
-	if (p % 3 != 4) {
+	if (p % 4 != 3) {
 		return false;
 	}
 	Integer tmp = modularExponentation(y, (p + 1) / 4, p);
@@ -162,5 +159,24 @@ bool PublicKeyAlgorithmBox::sqrt(const Integer& x, Integer& s) const {
 
 void PublicKeyAlgorithmBox::generateRSAParams(Integer& p, Integer& q,
 		Integer& e, Integer& d, unsigned int bitlen, unsigned int s) {
+}
+
+int PublicKeyAlgorithmBox::calcDecDigits(const Integer &x) {
+	Integer temp = x;
+	int ctr = 1;
+	while (temp > 10) {
+		temp /= 10;
+		ctr++;
+	}
+	return ctr;
+}
+
+Integer PublicKeyAlgorithmBox::exp(const Integer &base,
+		Integer exponent) {
+	if (exponent == 1) {
+		return base;
+	} else {
+		return base * exp(base, exponent - 1);
+	}
 }
 

@@ -40,6 +40,8 @@ public:
 
 	void generateRSAParams(Integer& p, Integer& q, Integer& e, Integer& d,
 			unsigned int bitlen = 256, unsigned int s = 30);
+	int calcDecDigits(const Integer &x);
+	Integer exp(const Integer &base, Integer exponent);
 };
 
 #endif

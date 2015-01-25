@@ -5,6 +5,7 @@
 #include <vector>
 #include "RabinDecryptor.h"
 #include "PublicKeyAlgorithmBox.h"
+#include <iostream>
 
 RabinDecryptor::RabinDecryptor(const Integer& p, const Integer& q,
 		const Integer& padding) {
@@ -33,11 +34,29 @@ bool RabinDecryptor::compute(const Integer& y, vector<Integer>& xv) {
 }
 
 bool RabinDecryptor::compute(const Integer& y, Integer& x) {
+	vector<Integer> xv;
+	if (this->compute(y, xv)) {
+		x = xv[0];
+		return true;
+	}
 	return false;
 }
 
 // #compute2()
 bool RabinDecryptor::compute2(const Integer& y, Integer& x) {
+	PublicKeyAlgorithmBox toolBox = PublicKeyAlgorithmBox();
+	vector<Integer> xv;
+	if (!this->compute(y, xv)) {
+		return false;
+	}
+	Integer temp;
+	for (int i = 0; i < 4; i++) {
+		temp = xv[i] % toolBox.exp(10, toolBox.calcDecDigits(padding));
+		if (temp == padding){
+			x = xv[i];
+			return true;
+		}
+	}
 	return false;
 }
 

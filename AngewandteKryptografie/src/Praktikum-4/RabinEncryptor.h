@@ -6,6 +6,8 @@
 #define RABINENCRYPTOR_H_
 
 #include "integer.h"
+#include "PublicKeyAlgorithmBox.h"
+
 
 using namespace CryptoPP;
 
