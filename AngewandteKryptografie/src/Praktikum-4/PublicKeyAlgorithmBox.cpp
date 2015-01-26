@@ -97,7 +97,7 @@ bool PublicKeyAlgorithmBox::millerRabinTest(Integer& n, unsigned int s) {
 	for (int i = 0; i < s; i++) {
 		a = 1;
 		while (a < 2) {
-			a.Randomize(rng, (n-1).BitCount());
+			a.Randomize(rng, (n - 1).BitCount());
 		}
 		if (witness(a, n)) {
 			return false;
@@ -109,7 +109,15 @@ bool PublicKeyAlgorithmBox::millerRabinTest(Integer& n, unsigned int s) {
 // #randomPrime()
 unsigned int PublicKeyAlgorithmBox::randomPrime(Integer &p, unsigned int bitlen,
 		unsigned int s) {
-	return 0;
+	NonblockingRng rng = NonblockingRng();
+	int ctr = 0;
+	while (true) {
+		ctr++;
+		p.Randomize(rng, bitlen);
+		if (millerRabinTest(p, s)) {
+			return ctr;
+		}
+	}
 } // randomPrime()
 
 // #randomPrime()
@@ -127,7 +135,6 @@ unsigned int PublicKeyAlgorithmBox::randomRabinPrime(Integer &p,
 			return 0;
 		}
 	}
-	return 0;
 } // randomRabinPrime()
 
 // #modPrimeSqrt()
@@ -159,6 +166,19 @@ bool PublicKeyAlgorithmBox::sqrt(const Integer& x, Integer& s) const {
 
 void PublicKeyAlgorithmBox::generateRSAParams(Integer& p, Integer& q,
 		Integer& e, Integer& d, unsigned int bitlen, unsigned int s) {
+	randomPrime(p, bitlen, s);
+	randomPrime(q, bitlen, s);
+	Integer phi_n = (p - 1) * (q - 1);
+	NonblockingRng rng = NonblockingRng();
+	Integer x, y;
+	while (true) {
+		e.Randomize(rng, 1, phi_n - 1);
+		if(EEA(e, phi_n, d, x, y)){
+			if(multInverse(e, phi_n, d)){
+				break;
+			}
+		}
+	}
 }
 
 int PublicKeyAlgorithmBox::calcDecDigits(const Integer &x) {
@@ -171,8 +191,7 @@ int PublicKeyAlgorithmBox::calcDecDigits(const Integer &x) {
 	return ctr;
 }
 
-Integer PublicKeyAlgorithmBox::exp(const Integer &base,
-		Integer exponent) {
+Integer PublicKeyAlgorithmBox::exp(const Integer &base, Integer exponent) {
 	if (exponent == 1) {
 		return base;
 	} else {

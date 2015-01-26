@@ -8,8 +8,14 @@
 RSAEncryptor::RSAEncryptor(const Integer& n, const Integer& e) {
 }
 
-RSAEncryptor::~RSAEncryptor() {}
+RSAEncryptor::~RSAEncryptor() {
+}
 
 bool RSAEncryptor::compute(const Integer& x, Integer& y) const {
-  return false;
+	if (x >= n) {
+		return false;
+	}
+	PublicKeyAlgorithmBox toolBox = PublicKeyAlgorithmBox();
+	y = toolBox.modularExponentation(x, e, n);
+	return true;
 }
