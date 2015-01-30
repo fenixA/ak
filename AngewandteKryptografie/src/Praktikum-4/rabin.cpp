@@ -19,7 +19,7 @@ void rabinParameters() {
 	 * Aufgabe 9.
 	 *********************************************************************/
 
-	cout << "Aufgabe 9" << endl << endl;
+	cout << endl << "Aufgabe 9" << endl << endl;
 	PublicKeyAlgorithmBox toolBox = PublicKeyAlgorithmBox();
 	Integer p;
 
@@ -35,7 +35,7 @@ void sqrtModPrimeExercise() {
 	/*********************************************************************
 	 * Aufgabe 10.
 	 *********************************************************************/
-	cout << "Aufgabe 10" << endl << endl;
+	cout << endl << "Aufgabe 10" << endl << endl;
 	Integer y, p;
 	vector<Integer> v;
 
@@ -59,7 +59,7 @@ void rabinDemo() {
 	/*********************************************************************
 	 * Aufgaben 11 und 12.
 	 *********************************************************************/
-	cout << "Aufgabe 11 f)" << endl << endl;
+	cout << endl << "Aufgabe 11 f)" << endl << endl;
 	RabinEncryptor re = RabinEncryptor(
 			Integer("728768879148869666628372866383")
 					* Integer("1178365175275537416785439551531"), 1234);
@@ -78,7 +78,7 @@ void rabinDemo() {
 	cout << "v2:\t" << v[2] << endl;
 	cout << "v3:\t" << v[3] << endl;
 
-	cout << "Aufgabe 12 c)" << endl << endl;
+	cout << endl << "Aufgabe 12 c)" << endl << endl;
 	v.clear();
 	re.compute2(x, y);
 	cout << "y:\t" << y << endl;
@@ -93,7 +93,7 @@ void rabinAttack() {
 	/*********************************************************************
 	 * Aufgabe 13.
 	 *********************************************************************/
-	cout << "Aufgabe 13 b)" << endl << endl;
+	cout << endl << "Aufgabe 13 b)" << endl << endl;
 	RabinDecryptor rd = RabinDecryptor(
 			Integer("728768879148869666628372866383"),
 			Integer("1178365175275537416785439551531"), 1234);

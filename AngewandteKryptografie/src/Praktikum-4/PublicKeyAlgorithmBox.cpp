@@ -151,16 +151,59 @@ bool PublicKeyAlgorithmBox::modPrimeSqrt(const Integer& y, const Integer& p,
 
 Integer PublicKeyAlgorithmBox::euklid(const Integer& a, const Integer& b,
 		vector<Integer>& q) {
-	return Integer("1");
+	Integer r0 = a;
+	Integer r1 = b;
+	Integer qm, rm;
+	while (r1 != 0) {
+		qm = r0 / r1;
+		q.push_back(qm);
+		rm = r0 - qm * r1;
+		r0 = r1;
+		r1 = rm;
+	}
+
+	return r0;
 }
 
 unsigned int PublicKeyAlgorithmBox::computeConvergents(const Integer& a,
 		const Integer& b, vector<Integer>& c, vector<Integer>& d) {
-	return 1;
+	vector<Integer> q = vector<Integer>();
+		euklid(a,b,q);
+
+		for(int j = 0; j<q.size(); j++){
+			if(j==0){
+				c.push_back(1);
+				d.push_back(0);
+			}
+			if(j==1){
+				c.push_back(q[j]);
+				d.push_back(1);
+			}
+			if(j >= 2){
+				c.push_back(q[j]*c[j-1]+c[j-2]);
+				d.push_back(q[j]*d[j-1]+d[j-2]);
+			}
+		}
+	  return 1;
 }
 
 // #sqrt()
 bool PublicKeyAlgorithmBox::sqrt(const Integer& x, Integer& s) const {
+	Integer low = 0;
+	Integer high = 1 + (x / 2);
+	Integer mid, tmp;
+	while (low + 1 < high) {
+		mid = low + (high - low) / 2;
+		tmp = mid * mid;
+		if (tmp == x) {
+			s = mid;
+			return true;
+		}
+		if (tmp <= x)
+			low = mid;
+		else
+			high = mid;
+	}
 	return false;
 }
 
@@ -173,8 +216,8 @@ void PublicKeyAlgorithmBox::generateRSAParams(Integer& p, Integer& q,
 	Integer x, y;
 	while (true) {
 		e.Randomize(rng, 1, phi_n - 1);
-		if(EEA(e, phi_n, d, x, y)){
-			if(multInverse(e, phi_n, d)){
+		if (EEA(e, phi_n, d, x, y)) {
+			if (multInverse(e, phi_n, d)) {
 				break;
 			}
 		}

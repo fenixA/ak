@@ -6,6 +6,8 @@
 #include "RSAEncryptor.h"
 
 RSAEncryptor::RSAEncryptor(const Integer& n, const Integer& e) {
+	this->n = n;
+	this->e = e;
 }
 
 RSAEncryptor::~RSAEncryptor() {
